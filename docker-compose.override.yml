@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+  mqtt:
+    ports:
+      - "1884:1883"
+      - "9001:9001"
+    volumes:
+      - "./data/mqtt/data:/mqtt/data"

@@ -1,0 +1,31 @@
+[{
+  "test": {
+    "type": "repeat",
+    "repeatTime": "1m"
+  },
+  "stopAllLorhammerTime": "0",
+  "sleepBeforeCheckTime": "10m",
+  "shutdownAllLorhammerTime": "10m",
+  "sleepAtEndTime": "0",
+  "requieredLorhammer": 1,
+  "maxWaitLorhammerTime": "5s",
+  "init": [{
+    "nsAddress": "127.0.0.1:1700",
+    "nbGatewayPerLorhammer": 10,
+    "nbNodePerGateway": [50, 50],
+    "nbScenarioReplayLaps": 0,
+    "scenarioSleepTime": ["10s", "10s"],
+    "receiveTimeoutTime": "1s",
+    "gatewaySleepTime": ["100ms", "500ms"],
+    "payloads" : []
+  }],
+  "provisioning": {
+    "type": "none"
+  },
+  "check": {
+    "type": "none"
+  },
+  "deploy": {
+    "type": "none"
+  }
+}]

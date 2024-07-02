@@ -1,0 +1,116 @@
+[{
+	"test": {
+	  "type": "none | oneShot | repeat",
+	  "repeatTime": "0"
+	},
+	"stopAllLorhammerTime": "0",
+	"sleepBeforeCheckTime": "10s",
+	"shutdownAllLorhammerTime": "10m",
+	"sleepAtEndTime": "0",
+	"init": {
+	  "nsAddress": "127.0.0.1:1700",
+	  "nbGatewayPerLorhammer": 10,
+	  "nbNodePerGateway": [50, 50],
+	  "nbScenarioReplayLaps": 0,
+	  "scenarioSleepTime": ["10s", "10s"],
+	  "receiveTimeoutTime": "1s",
+	  "gatewaySleepTime": ["100ms", "500ms"],
+	  "randomPayloads": false,
+	  "payloads" : [
+		{"value": "01B501002919000006018403131313121233", "date": 1488931200},
+		{"value": "01B501002919000006018403131313121244", "date": 1488931201}
+	  ]
+	},
+	"provisioning": {
+	  "type": "none | loraserver | http",
+	  "config": {
+		"apiUrl": "127.0.0.1:9999",
+		"abp": true,
+		"login": "admin",
+		"password": "admin",
+		"organizationId": "",
+		"networkServerId": "",
+		"networkServerAddr": "",
+		"serviceProfileID": "",
+		"appId": "",
+		"deleteOrganization": false,
+		"deleteApplication": false,
+		"nbProvisionerParallel": 10
+	  },
+	  "config": {
+		"creationApiUrl": "http://127.0.0.1:1080",
+		"deletionApiUrl": "http://127.0.0.1:1080"
+	  }
+	},
+	"check": {
+	  "type": "none | prometheus | kafka | mqtt",
+	  "config": {
+		"address": "http://127.0.0.1:9090",
+		"checks": [
+		  {"query": "sum(lorhammer_gateway)", "resultMin": 10, "resultMax": 10, "description": "nb gateways"}
+		]
+	  },
+	  "config": {
+		"address": ["127.0.0.1:9092"],
+		"topic": "test",
+		"checks": [
+		  {
+			"description": "MY_DATA",
+			"remove": ["\"time\":[^,]+,","\"applicationID\":[^,]+,"],
+			"text": "DATA"
+		  }
+		]
+	  },
+	  "config": {
+		"address": "127.0.0.1:1883",
+		"channel": "test",
+		"checks": [
+		  {
+			"description": "MY_DATA",
+			"remove": ["\"time\":[^,]+,","\"applicationID\":[^,]+,"],
+			"text": "DATA"
+		  }
+		]
+	  }
+	},
+	"deploy": {
+	  "type": "local | distant | amazon",
+	  "config": {
+		"pathFile": "./build/lorhammer",
+		"cleanPreviousInstances": true,
+		"nbInstanceToLaunch": 1,
+		"port": 1234
+	  },
+	  "config": { 
+		"instances": [
+		  {
+			"sshKeyPath": "",
+			"user": "",
+			"ipServer": "",
+			"pathFile": "",
+			"pathWhereScp": "",
+			"beforeCmd": "",
+			"afterCmd": "",
+			"nbDistantToLaunch": 0
+		  }
+		]
+	  }
+	  },
+	  "config": {
+		"region": "eu-west-2",
+		"imageId": "ami-87848ee3",
+		"instanceType": "t2.micro",
+		"keyPairName": "amazon-pc_itk_romain",
+		"securityGroupIds": ["sg-9372c1fa"],
+		"minCount": 10,
+		"maxCount": 10,
+		"distantConfig": {
+		  "sshKeyPath": "~/.ssh/amazon-pc_itk_romain",
+		  "user": "admin",
+		  "pathFile": "./build/lorhammer",
+		  "pathWhereScp": "/home/admin/",
+		  "nbDistantToLaunch": 1
+		}
+	  }
+	}
+  }]

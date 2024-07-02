@@ -1,0 +1,46 @@
+[{
+  "test": {
+    "type": "repeat",
+    "repeatTime": "1m"
+  },
+  "stopAllLorhammerTime": "40m",
+  "sleepBeforeCheckTime": "0",
+  "shutdownAllLorhammerTime": "40m",
+  "sleepAtEndTime": "0",
+  "requieredLorhammer": 1,
+  "maxWaitLorhammerTime": "5s",
+  "init": [{
+    "nsAddress": "127.0.0.1:1700",
+    "nbGatewayPerLorhammer": 1000,
+    "nbNodePerGateway": [100, 100],
+    "nbScenarioReplayLaps": 0,
+    "scenarioSleepTime": ["10s", "10s"],
+    "receiveTimeoutTime": "1s",
+    "gatewaySleepTime": ["100ms", "500ms"]
+  }],
+  "provisioning": {
+    "type": "none"
+  },
+  "check": {
+    "type": "none"
+  },
+  "deploy": {
+    "type": "amazon",
+    "config": {
+      "region": "eu-west-2",
+      "imageId": "ami-87848ee3",
+      "instanceType": "t2.micro",
+      "keyPairName": "amazon-pc_itk_romain",
+      "securityGroupIds": ["sg-9372c1fa"],
+      "minCount": 10,
+      "maxCount": 10,
+      "distantConfig": {
+        "sshKeyPath": "~/.ssh/amazon-pc_itk_romain",
+        "user": "admin",
+        "pathFile": "./build/lorhammer",
+        "pathWhereScp": "/home/admin/",
+        "nbDistantToLaunch": 1
+      }
+    }
+  }
+}]

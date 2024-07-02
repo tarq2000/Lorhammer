@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+
+  prometheus:
+    build:
+      context: ./resources/examples/loraserver
+      dockerfile: ./Dockerfile-prometheus
+    expose:
+      - 9090
+
+  lorhammer:
+    image: ${CI_REGISTRY_IMAGE}/lorhammer:${CI_PIPELINE_ID}
+    command: -mqtt tcp://mqtt:1883 -port 1234 -vvv
+    depends_on:
+      - mqtt
+
+  orchestrator:
+    image: ${CI_REGISTRY_IMAGE}/orchestrator:${CI_PIPELINE_ID}
+    command: -mqtt tcp://mqtt:1883 -from-file "${FROM_FILE}"
+    volumes:
+      - ./resources/scenarios/ci/:/resources/scenarios/ci/
+    depends_on:
+      - mqtt

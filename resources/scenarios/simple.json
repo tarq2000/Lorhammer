@@ -1,0 +1,47 @@
+[{
+  "test": {
+    "type": "oneShot",
+    "repeatTime": "0"
+  },
+  "stopAllLorhammerTime": "0",
+  "sleepBeforeCheckTime": "0",
+  "shutdownAllLorhammerTime": "0",
+  "sleepAtEndTime": "0",
+  "requieredLorhammer": 1,
+  "maxWaitLorhammerTime": "5s",
+  "init": [{
+    "nsAddress": "127.0.0.1:1700",
+    "nbGatewayPerLorhammer": 1,
+    "nbNodePerGateway": [1, 1],
+    "nbScenarioReplayLaps": 0,
+    "scenarioSleepTime": ["10s", "10s"],
+    "receiveTimeoutTime": "1s",
+    "gatewaySleepTime": ["100ms", "500ms"],
+    "payloads" : [
+      {"value": "01B501002919000006018403131313121233", "date": 1488931200},
+      {"value": "01B501002919000006018403131313121244", "date": 1488931201}
+    ]
+  }],
+  "provisioning": {
+    "type": "loraserver",
+    "config": {
+      "apiUrl": "https://127.0.0.1:9999",
+      "abp": true,
+      "login": "admin",
+      "password": "admin",
+      "appId": "",
+      "nbProvisionerParallel": 10
+    }
+  },
+  "check": {
+    "type": "none"
+  },
+  "deploy": {
+    "type": "local",
+    "config": {
+      "pathFile": "./build/lorhammer",
+      "cleanPreviousInstances": true,
+      "nbInstanceToLaunch": 1
+    }
+  }
+}]
