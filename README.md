@@ -1,4 +1,6 @@
 # Lorhammer
+(The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
+
 
 
 # Lorhammer Installation Guide
@@ -63,16 +65,26 @@ Before you begin, ensure you have `git` and `make` installed on your system.
 
 > Stress your lora network-server
 
-[![status](https://gitlab.com/itk.fr/lorhammer/badges/master/build.svg)](https://gitlab.com/itk.fr/lorhammer/commits/master)
+(https://gitlab.com/itk.fr/lorhammer/commits/master)
 [![coverage report](https://gitlab.com/itk.fr/lorhammer/badges/master/coverage.svg)](https://gitlab.com/itk.fr/lorhammer/commits/master)
 [![Go Report Card](https://goreportcard.com/badge/gitlab.com/itk.fr/lorhammer)](https://goreportcard.com/report/gitlab.com/itk.fr/lorhammer)
 
 When building a big iot lora platform handling millions of messages per seconds, how to be sure we handle all the messages in time ? Today, no publicly accessible tool enables us to simulate the behavior of a wide lora infrastructure along with the messages.
 
-Lorhammer is here to do that. You can launch as much lorhammers as you want to stress and test your network-server.## License
+Lorhammer is here to do that. You can launch as much lorhammers as you want to stress and test your network-server.
+
+[![lorhammer-schema](doc/static/images/Lorhammer-schema.png)](doc/static/images/Lorhammer-schema.png)
+
+## Features
+
+* Can stress a lorawan network-server, through scenarios
+* Can check if result are good over prometheus api call
+* Can display what happend over grafana
+* Can be distributed
+* An orchestrator is available to manage lorhammers, through mqtt
+* lorhammers can be deployed over ssh on amazon
+
+
+## License
 
 This project is licensed under the Apache 2 License - see the `LICENSE.md` file for details
-
-
-(The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
-
