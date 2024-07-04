@@ -39,7 +39,23 @@ Before you begin, ensure you have `git` and `make` installed on your system.
 
    ```bash
    ./build/lorhammer -mqtt tcp://127.0.0.1:1884
+
+5. **Ensure the Binary is Executable**
+
+   First, set the orchestrator binary as executable. This is crucial to ensure that you can run it from the command line. Execute the following command: 
+
+
+   ```bash
+   chmod +x ./build/orchestrator
+
+6. **Run the Orchestrator**
+
+   Now that the binary is executable, you can start the orchestrator. Given that you've confirmed its location, use this command to run it: 
+
+   ```bash
+   ./build/orchestrator -mqtt tcp://127.0.0.1:1884 -from-file "./resources/scenarios/simple.json"
 .
+
 
 
 
