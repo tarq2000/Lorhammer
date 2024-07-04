@@ -39,7 +39,7 @@ Before you begin, ensure you have `git` and `make` installed on your system.
 
    ```bash
    ./build/lorhammer -mqtt tcp://127.0.0.1:1884
-
+.
 
 
 
