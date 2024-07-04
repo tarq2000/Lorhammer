@@ -1,5 +1,52 @@
 # Lorhammer
 (The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
+
+
+
+# Lorhammer Installation Guide
+
+This guide outlines the steps to install and run Lorhammer on your local environment.
+
+## Prerequisites
+
+Before you begin, ensure you have `git` and `make` installed on your system.
+
+## Installation
+
+1. **Clone the repository:**
+
+   Clone Lorhammer to your local machine by running the following command:
+
+   ```bash
+   git clone https://github.com/tarq2000/Lorhammer.git
+
+2. **Then need to make build :**
+
+   
+   ```bash
+   make
+
+3. **start mandatory tools :**
+
+
+   ```bash
+   ./resources/scripts/launchTools.sh
+
+4. **start lorhammer worker**
+
+   please change the  127.0.0.1 what your host (use  127.0.0.1 for local host) : 
+
+
+   ```bash
+   ./build/lorhammer -mqtt tcp://127.0.0.1:1884
+
+
+
+
+
+
+
+
 > Stress your lora network-server
 
 [![status](https://gitlab.com/itk.fr/lorhammer/badges/master/build.svg)](https://gitlab.com/itk.fr/lorhammer/commits/master)
