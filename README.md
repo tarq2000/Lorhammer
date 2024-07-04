@@ -1,6 +1,4 @@
 # Lorhammer
-(The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
-
 
 
 # Lorhammer Installation Guide
@@ -74,3 +72,7 @@ When building a big iot lora platform handling millions of messages per seconds,
 Lorhammer is here to do that. You can launch as much lorhammers as you want to stress and test your network-server.## License
 
 This project is licensed under the Apache 2 License - see the `LICENSE.md` file for details
+
+
+(The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
+
