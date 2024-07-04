@@ -65,8 +65,8 @@ Before you begin, ensure you have `git` and `make` installed on your system.
 
 > Stress your lora network-server
 
-(https://gitlab.com/itk.fr/lorhammer/commits/master)
-[![Go Report Card](https://goreportcard.com/badge/gitlab.com/itk.fr/lorhammer)](https://goreportcard.com/report/gitlab.com/itk.fr/lorhammer)
+[![status](https://gitlab.com/itk.fr/lorhammer/badges/master/build.svg)](https://gitlab.com/itk.fr/lorhammer/commits/master)
+[![coverage report](https://gitlab.com/itk.fr/lorhammer/badges/master/coverage.svg)]
 
 When building a big iot lora platform handling millions of messages per seconds, how to be sure we handle all the messages in time ? Today, no publicly accessible tool enables us to simulate the behavior of a wide lora infrastructure along with the messages.
 
