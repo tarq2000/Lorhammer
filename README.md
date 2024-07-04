@@ -1,5 +1,4 @@
 # Lorhammer
-(The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
 
 
 
@@ -61,10 +60,6 @@ Before you begin, ensure you have `git` and `make` installed on your system.
 
 
 
-
-
-> Stress your lora network-server
-
 (https://gitlab.com/itk.fr/lorhammer/commits/master)
 [![coverage report](https://gitlab.com/itk.fr/lorhammer/badges/master/coverage.svg)](https://gitlab.com/itk.fr/lorhammer/commits/master)
 [![Go Report Card](https://goreportcard.com/badge/gitlab.com/itk.fr/lorhammer)](https://goreportcard.com/report/gitlab.com/itk.fr/lorhammer)
@@ -88,3 +83,7 @@ Lorhammer is here to do that. You can launch as much lorhammers as you want to s
 ## License
 
 This project is licensed under the Apache 2 License - see the `LICENSE.md` file for details
+
+## orginal file
+
+(The orginal file is in the Lorhammer website : http://lorhammer.itk.fr/)
