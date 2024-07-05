@@ -58,7 +58,9 @@ Before you begin, ensure you have `git` and `make` installed on your system.
    To start only one lorhammer simulating 10 gateways with 5 nodes per gateway:
 
    ```bash
-./build/lorhammer -nb-gateway 10 -min-nb-node 5 -max-nb-node 5 -ns-address 127.0.0.1:1700 -mqtt mqtt://127.0.0.1:1884
+   ./build/lorhammer -nb-gateway 10 -min-nb-node 5 -max-nb-node 5 -ns-address 127.0.0.1:1700 -mqtt mqtt://127.0.0.1:1884
+
+
 
 .
 
