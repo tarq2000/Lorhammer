@@ -19,19 +19,28 @@ Before you begin, ensure you have `git` and `make` installed on your system.
    ```bash
    git clone https://github.com/tarq2000/Lorhammer.git
 
-2. **Then need to make build :**
+1. **Add directory **
+
+   add Lorhammer directory
+
+   ```bash
+   cd Lorhammer
+
+
+
+3. **Then need to make build :**
 
    
    ```bash
    make
 
-3. **start mandatory tools :**
+4. **start mandatory tools :**
 
 
    ```bash
    ./resources/scripts/launchTools.sh
 
-4. **start lorhammer worker**
+5. **start lorhammer worker**
 
    please change the  127.0.0.1 what your host (use  127.0.0.1 for local host) : 
 
@@ -39,7 +48,7 @@ Before you begin, ensure you have `git` and `make` installed on your system.
    ```bash
    ./build/lorhammer -mqtt tcp://127.0.0.1:1884
 
-5. **Ensure the Binary is Executable**
+6. **Ensure the Binary is Executable**
 
    First, set the orchestrator binary as executable. This is crucial to ensure that you can run it from the command line. Execute the following command: 
 
@@ -47,13 +56,13 @@ Before you begin, ensure you have `git` and `make` installed on your system.
    ```bash
    chmod +x ./build/orchestrator
 
-6. **Run the Orchestrator**
+7. **Run the Orchestrator**
 
    Now that the binary is executable, you can start the orchestrator. Given that you've confirmed its location, use this command to run it: 
 
    ```bash
    ./build/orchestrator -mqtt tcp://127.0.0.1:1884 -from-file "./resources/scenarios/simple.json"
-7. **Start simulating **
+8. **Start simulating **
 
    To start only one lorhammer simulating 10 gateways with 5 nodes per gateway:
 
