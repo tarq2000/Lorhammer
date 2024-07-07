@@ -26,8 +26,6 @@ Before you begin, ensure you have `git` and `make` installed on your system.
    ```bash
    cd Lorhammer
 
-
-
 3. **Then need to make build :**
 
    
